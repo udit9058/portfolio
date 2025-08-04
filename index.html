@@ -31,6 +31,83 @@
 
   <!-- Theme Style -->
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .portfolio-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+      width: 100%;
+      min-height: 350px;
+      /* Reduced height */
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .overlay {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      background: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .portfolio-card:hover .overlay {
+      opacity: 1;
+    }
+
+    .portfolio-item-content h3 {
+      color: white;
+      font-size: 1.6rem;
+      /* Adjusted for smaller card */
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .portfolio-item-content p {
+      color: white;
+      font-size: 1rem;
+      /* Adjusted for smaller card */
+      margin-bottom: 12px;
+    }
+
+    .social-links a {
+      display: block;
+      color: white;
+      background-color: #1a73e8;
+      padding: 8px 14px;
+      /* Adjusted padding for smaller buttons */
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      text-align: center;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .social-links a:hover {
+      background-color: #1557b0;
+      transform: scale(1.05);
+    }
+
+    .lazyload {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  </style>
 
 </head>
 
@@ -68,9 +145,9 @@
           <div class="row align-items-center justify-content-between text-left">
             <div class="col-md-5 text-right">
               <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
-                <li class="has-children">
+                <li>
                   <a href="#home-section" class="nav-link">Home</a>
-                  <ul class="dropdown">
+                  <!-- <ul class="dropdown">
                     <li>
                       <a href="index.html">Hero Image BG</a>
                     </li>
@@ -86,7 +163,7 @@
                     <li>
                       <a href="index-right-menu.html">Right Menu</a>
                     </li>
-                  </ul>
+                  </ul> -->
                 </li>
                 <li><a href="#portfolio-section" class="nav-link">Portfolio</a></li>
                 <li><a href="#about-section" class="nav-link">About</a></li>
@@ -172,6 +249,26 @@
             </div>
 
             <div id="posts" class="row gutter-isotope-item">
+
+              <div
+                class="item web col-sm-6 col-md-6 col-lg-4 isotope-mb-2 portfolio-card elegance-essence bg-white rounded-lg shadow-md">
+                <div class="overlay">
+                  <div class="portfolio-item-content">
+                    <h3>Elegance Essence</h3>
+                    <p>Elegance Essence is your premier online destination for branded costumes.</p>
+                    <div class="social-links mt-4 grid grid-cols-2 gap-2">
+                      <a href="https://github.com/udit9058/elegance-essence-frontend.git" target="_blank">Frontend</a>
+                      <a href="https://github.com/udit9058/elegance-essence-backend.git" target="_blank">Backend</a>
+                      <a href="https://elegance-essence-frontend.netlify.app/" target="_blank">Live Site</a>
+                      <a href="https://www.linkedin.com/posts/udit-sharma-9799231aa_reactjs-laravel-tailwindcss-activity-7357456754743345152-9cxA"
+                        target="_blank">LinkedIn</a>
+                    </div>
+                  </div>
+                </div>
+                <img src="images/elegance_essence.png" class="lazyload img-fluid" alt="Web Development Project" />
+              </div>
+
+
               <div class="item web col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
                 <!-- <a class="portfolio-item ajax-load-page isotope-item gsap-reveal-img" data-id="1"> -->
                 <div class="overlay">
@@ -231,21 +328,6 @@
                 <!-- </a> -->
               </div>
 
-
-
-              <div class="item web col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
-                <a href="https://www.youtube.com/watch?v=hwW324a-Ons" target="_blank">
-                  <h3>Front end ready</h3>
-                  <p>This demo I made ready for Israel client</p>
-                  <!-- Replace the YouTube link with your actual YouTube video link -->
-                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/hwW324a-Ons" frameborder="0"
-                    allowfullscreen></iframe>
-                </a>
-              </div>
-
-
-
-
               <!-- end of the web  -->
 
 
@@ -283,31 +365,31 @@
                 </a>
               </div>
 
-              <div class="item shopify col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
-                <!-- <a class="portfolio-item isotope-item gsap-reveal-img ajax-load-page" data-id="4"> -->
+              <div
+                class="item shopify col-sm-6 col-md-6 col-lg-4 isotope-mb-2 portfolio-card shopify-card bg-white rounded-lg shadow-md">
                 <div class="overlay">
-                  <!-- <span class="wrap-icon icon-link2"></span> -->
                   <div class="portfolio-item-content">
-                    <h3>Shopify</h3>
+                    <h3>Shopify Development</h3>
+                    <p>Contributed to <strong>ActiveMavericks</strong> and <strong>Vedroots</strong>, enhancing
+                      eCommerce
+                      stores with custom Shopify themes, app integrations, and performance optimizations. Built
+                      high-performing eCommerce stores for ActiveMavericks and Vedroots, focusing on seamless
+                      user experiences and robust functionality.</p>
+                    <div class="social-links mt-4 grid grid-cols-2 gap-2">
+                      <a href="https://www.activemavericks.com/" target="_blank">ActiveMavericks</a>
+                      <a href="https://www.vedroots.in/" target="_blank">Vedroots</a>
+                    </div>
                   </div>
-                  <div class="additional-content">
-                    <!-- Add any additional text or elements here -->
-                    <p>Explore my Shopify development expertise and how I contribute to building high-performing
-                      eCommerce stores.</p>
-
-                    <p>I have hands-on experience working on live Shopify projects like <strong>ActiveMavericks</strong>
-                      and <strong>Vedroots</strong>, where I was involved in theme customization, app integration, and
-                      performance optimization. My work ensures smooth user experiences, scalable store functionality,
-                      and pixel-perfect design implementation. I focus on clean coding practices, responsiveness, and
-                      maintaining the brand identity throughout the site to deliver successful Shopify solutions.</p>
-
-                    <!-- <a href="contact.html" class="btn btn-outline-pill btn-custom-light">Get in Touch</a> -->
-                  </div>
-
                 </div>
-
-                <img src="images/shopify.png" class="lazyload  img-fluid" alt="Images" />
-                <!-- </a> -->
+                <img src="images/shopify.png" class="lazyload img-fluid" alt="Shopify Development" />
+                <div class="p-4">
+                  <!-- <p>Contributed to <strong>ActiveMavericks</strong> and <strong>Vedroots</strong>, enhancing eCommerce
+                    stores with custom Shopify themes, app integrations, and performance optimizations. For
+                    ActiveMavericks, I implemented secure payment gateways (Razorpay), responsive designs for kids and
+                    accessories collections, and streamlined order tracking systems. For Vedroots, I focused on clean
+                    coding, SEO-friendly structures, and user-friendly navigation to support their ayurvedic product
+                    offerings. My work ensures scalability, fast load times, and alignment with brand identity.</p> -->
+                </div>
               </div>
 
 
@@ -405,14 +487,6 @@
                     allowfullscreen></iframe>
                 </a>
               </div>
-
-
-
-
-
-
-
-
               <!-- Add similar blocks for other skills/projects -->
             </div>
           </div>
@@ -475,7 +549,7 @@
                 toward my aspirations. Excited to contribute to the evolving world of technology.</p>
               <!-- <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Download my CV</a></p> -->
               <p class="gsap-reveal">
-                <a href="https://drive.google.com/file/d/1MQBsmcX-l-McBtdknydyrRFJN_HVRZPV/view?usp=drive_link"
+                <a href="https://drive.google.com/file/d/18O6EcZIHCWD60c0GbbQ-FxlY0pvoALg_/view?usp=sharing"
                   class="btn btn-outline-pill btn-custom-light" download>Download my CV</a>
               </p>
 
@@ -583,75 +657,103 @@
             <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Happy Clients</span></h2>
             <span class="gsap-reveal"><img src="images/divider.png" alt="divider" width="76"></span>
           </div>
-        </div>
-
-        <div class="owl-carousel testimonial-slider" data-aos="fade-up">
-          <div>
-            <div class="testimonial-v1">
-              <div class="testimonial-inner-bg">
-                <span class="quote">&ldquo;</span>
-                <blockquote>
-                  We are extremely pleased with the website developed by Udit for DefKraft Training Confederation. The
-                  design is visually appealing, user-friendly, and aligns perfectly with our mission and values. Udit
-                  demonstrated professionalism, creativity, and attention to detail throughout the project. The final
-                  product not only looks great but also serves as an effective tool for communicating our programs and
-                  engaging with our audience.
-
-                  Thank you, Udit, for your excellent work and dedication.
-                </blockquote>
+          <div class="owl-carousel testimonial-slider" data-aos="fade-up">
+            <div>
+              <div class="testimonial-v1 testimonial-card bg-white rounded-lg shadow-md">
+                <div class="testimonial-inner-bg p-6">
+                  <span class="quote">&ldquo;</span>
+                  <blockquote>
+                    We are thrilled with the website developed by Udit for <a href="https://defkraft.com/"
+                      target="_blank" class="highlight-link">DefKraft Training Confederation</a>. The design is visually
+                    appealing, user-friendly, and perfectly aligns with our mission to empower youth through discipline
+                    and leadership training. Udit’s expertise in creating a responsive, engaging platform has enhanced
+                    our ability to communicate our programs and connect with our audience. His professionalism and
+                    attention to detail were exceptional throughout the project.
+                  </blockquote>
+                </div>
+                <div class="testimonial-author-info p-4">
+                  <img src="images/defkraft.png" alt="DefKraft Training Confederation" class="w-16 h-16 rounded-full">
+                  <h3>DefKraft Training Confederation</h3>
+                </div>
               </div>
-
-              <div class="testimonial-author-info" style="margin: -78px 0px 0px 0px;">
-                <img src="images/defkraft.png" alt="Image">
-                <h3> DefKraft Training Confederation</h3>
-                <!-- <span class="d-block position">Product Designer @facebook</span> -->
-              </div>
-
             </div>
           </div>
-          <!-- <div>
-            <div class="testimonial-v1">
-              <div class="testimonial-inner-bg">
-                <span class="quote">&ldquo;</span>
-                <blockquote>
-                  Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-                  the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
-                  language ocean. A small river named Duden flows by their place and supplies it with the necessary
-                  regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-                </blockquote>
-              </div>
-
-              <div class="testimonial-author-info">
-                <img src="images/person_man_2.jpg" alt="Image">
-                <h3>Ryan Mullins</h3>
-                <span class="d-block position">Product Designer @Shopify</span>
-              </div>
-
-            </div>
-          </div>
-          <div>
-            <div class="testimonial-v1">
-              <div class="testimonial-inner-bg">
-                <span class="quote">&ldquo;</span>
-                <blockquote>
-                  Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-                  the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
-                  language ocean. A small river named Duden flows by their place and supplies it with the necessary
-                  regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-                </blockquote>
-              </div>
-
-              <div class="testimonial-author-info">
-                <img src="images/person_woman_1.jpg" alt="Image">
-                <h3>Erica Miller</h3>
-                <span class="d-block position">Product Designer @Twitter</span>
-              </div>
-
-            </div>
-          </div> -->
         </div>
-
       </div>
+      <style>
+        .testimonial-card {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          overflow: hidden;
+          border-radius: 10px;
+          width: 100%;
+          min-height: 350px;
+          /* Matches portfolio card height */
+        }
+
+        .testimonial-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-inner-bg {
+          background: linear-gradient(145deg, #474747, #ffffff);
+          position: relative;
+        }
+
+        .testimonial-inner-bg .quote {
+          font-size: 2rem;
+          color: #1a73e8;
+          position: absolute;
+          top: 10px;
+          left: 10px;
+        }
+
+        .testimonial-inner-bg blockquote {
+          font-size: 1.1rem;
+          color: #333;
+          line-height: 1.6;
+        }
+
+        .highlight-link {
+          color: #1a73e8;
+          font-weight: bold;
+          text-decoration: underline;
+          transition: color 0.3s ease;
+        }
+
+        .highlight-link:hover {
+          color: #1557b0;
+        }
+
+        .testimonial-author-info {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+        }
+
+        .testimonial-author-info img {
+          object-fit: cover;
+        }
+
+        .testimonial-author-info h3 {
+          font-size: 1.4rem;
+          color: #333;
+          margin: 0;
+        }
+      </style>
+      <script>
+        gsap.from('.testimonial-card', {
+          opacity: 0,
+          y: 50,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '.testimonial-card',
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          }
+        });
+      </script>
       <!-- END testimonial -->
 
       <div class="unslate_co--section" id="journal-section">
@@ -849,6 +951,19 @@
 
   <script src="js/scripts-dist.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    gsap.from('.portfolio-card.elegance-essence', {
+      opacity: 0,
+      y: 50,
+      duration: 0.8,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.portfolio-card.elegance-essence',
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      }
+    });
+  </script>
   <!-- <script>
     // Set the dynamic link using JavaScript
     document.getElementById("dynamicLink").href = "https://drive.google.com/drive/folders/1rQO99Nx4iPEeuftmzMKMgxENKtJ4QAJI";
